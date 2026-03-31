@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://mamadoundiaye.dev', // ← à mettre à jour avec le vrai domaine Netlify
+  site: 'https://reliable-crepe-78da5d.netlify.app',
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()]
