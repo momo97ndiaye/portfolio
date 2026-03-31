@@ -36,8 +36,7 @@
           <p class="text-[#64748B] text-sm leading-relaxed" id="success-body">
             Merci pour votre demande. Je vous réponds sous 24h.
           </p>
-          <button onclick="document.getElementById('form-success').classList.add('hidden'); document.getElementById('contact-form').classList.remove('hidden');"
-                  class="btn-outline text-sm mt-2" id="success-back">
+          <button id="success-back" class="btn-outline text-sm mt-2">
             ← Envoyer une autre demande
           </button>
         </div>
@@ -46,33 +45,29 @@
           id="contact-form"
           name="contact"
           method="POST"
-          action="/#contact"
           data-netlify="true"
           netlify-honeypot="bot-field"
           class="glass rounded-2xl p-8 flex flex-col gap-6"
         >
-          <!-- Netlify hidden fields -->
           <input type="hidden" name="form-name" value="contact" />
           <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
 
           <!-- Name -->
           <div class="flex flex-col gap-2">
             <label class="text-sm font-medium text-[#94A3B8]" data-i18n="contact.fields.name">Nom complet</label>
-            <input type="text" name="name" required class="form-input"
-                   placeholder="Mamadou Diallo" />
+            <input type="text" name="name" required class="form-input" placeholder="Mamadou Diallo" />
           </div>
 
           <!-- Email -->
           <div class="flex flex-col gap-2">
             <label class="text-sm font-medium text-[#94A3B8]" data-i18n="contact.fields.email">Email</label>
-            <input type="email" name="email" required class="form-input"
-                   placeholder="mamadou@example.com" />
+            <input type="email" name="email" required class="form-input" placeholder="mamadou@example.com" />
           </div>
 
-          <!-- Project type select — FR options -->
-          <div class="flex flex-col gap-2" id="field-project-type-fr">
-            <label class="text-sm font-medium text-[#94A3B8]" data-i18n="contact.fields.project_type">Type de projet</label>
-            <select name="project_type" class="form-input">
+          <!-- Project type — single select, options swapped by JS -->
+          <div class="flex flex-col gap-2">
+            <label id="label-project-type" class="text-sm font-medium text-[#94A3B8]">Type de projet</label>
+            <select name="project_type" id="select-project-type" class="form-input">
               <option value="" disabled selected>—</option>
               <option>SaaS sur mesure</option>
               <option>API &amp; Backend</option>
@@ -82,38 +77,15 @@
               <option>Autre</option>
             </select>
           </div>
-          <!-- Project type select — EN options (hidden by default) -->
-          <div class="flex flex-col gap-2 hidden" id="field-project-type-en">
-            <label class="text-sm font-medium text-[#94A3B8]">Project type</label>
-            <select name="project_type_en" class="form-input">
-              <option value="" disabled selected>—</option>
-              <option>Custom SaaS</option>
-              <option>API &amp; Backend</option>
-              <option>DevOps</option>
-              <option>Web App</option>
-              <option>AI Integration</option>
-              <option>Other</option>
-            </select>
-          </div>
 
-          <!-- Budget radio — FR -->
-          <div class="flex flex-col gap-3" id="field-budget-fr">
-            <label class="text-sm font-medium text-[#94A3B8]" data-i18n="contact.fields.budget">Budget approximatif</label>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-              <label class="radio-card"><input type="radio" name="budget" value="<500k FCFA / 1 000€" /> &lt; 500k FCFA / 1 000€</label>
-              <label class="radio-card"><input type="radio" name="budget" value="500k-2M FCFA" /> 500k–2M FCFA / 1 000–5 000€</label>
-              <label class="radio-card"><input type="radio" name="budget" value=">2M FCFA / 5 000€+" /> &gt; 2M FCFA / 5 000€+</label>
-              <label class="radio-card"><input type="radio" name="budget" value="A définir" /> À définir</label>
-            </div>
-          </div>
-          <!-- Budget radio — EN -->
-          <div class="flex flex-col gap-3 hidden" id="field-budget-en">
-            <label class="text-sm font-medium text-[#94A3B8]">Approximate budget</label>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-              <label class="radio-card"><input type="radio" name="budget_en" value="<€1,000/$1,000" /> &lt; €1,000 / $1,000</label>
-              <label class="radio-card"><input type="radio" name="budget_en" value="€1,000–5,000/$1,000–5,500" /> €1,000–5,000 / $1,000–5,500</label>
-              <label class="radio-card"><input type="radio" name="budget_en" value=">€5,000/$5,500+" /> &gt; €5,000 / $5,500+</label>
-              <label class="radio-card"><input type="radio" name="budget_en" value="Not sure yet" /> Not sure yet</label>
+          <!-- Budget — single radio group, labels swapped by JS -->
+          <div class="flex flex-col gap-3">
+            <label id="label-budget" class="text-sm font-medium text-[#94A3B8]">Budget approximatif</label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2" id="budget-options">
+              <label class="radio-card"><input type="radio" name="budget" value="< 500k FCFA / 1 000€" /><span>&#60; 500k FCFA / 1 000€</span></label>
+              <label class="radio-card"><input type="radio" name="budget" value="500k–2M FCFA / 1 000–5 000€" /><span>500k–2M FCFA / 1 000–5 000€</span></label>
+              <label class="radio-card"><input type="radio" name="budget" value="> 2M FCFA / 5 000€+" /><span>&#62; 2M FCFA / 5 000€+</span></label>
+              <label class="radio-card"><input type="radio" name="budget" value="À définir" /><span>À définir</span></label>
             </div>
           </div>
 
@@ -134,14 +106,12 @@
       <!-- Contact info — takes 2/5 -->
       <div class="lg:col-span-2 flex flex-col gap-6" data-aos="fade-up" data-aos-delay="200">
 
-        <!-- Info card -->
         <div class="glass rounded-2xl p-6 flex flex-col gap-5">
           <h3 class="text-base font-semibold text-[#F1F5F9]">Mamadou NDIAYE</h3>
           <div class="flex flex-col gap-4">
 
-            <!-- Email -->
             <a href="mailto:momodoundiaye@gmail.com"
-               class="flex items-center gap-3 text-sm text-[#94A3B8] hover:text-[#38BDF8] transition-colors group">
+               class="flex items-center gap-3 text-sm text-[#94A3B8] hover:text-[#38BDF8] transition-colors">
               <div class="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
                    style="background:rgba(56,189,248,0.08);border:1px solid rgba(56,189,248,0.15);">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-[#38BDF8]">
@@ -151,7 +121,6 @@
               momodoundiaye@gmail.com
             </a>
 
-            <!-- LinkedIn -->
             <a href="https://linkedin.com/in/mamadou-ndiaye-devweb1997" target="_blank" rel="noopener noreferrer"
                class="flex items-center gap-3 text-sm text-[#94A3B8] hover:text-[#38BDF8] transition-colors">
               <div class="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
@@ -163,7 +132,6 @@
               linkedin.com/in/mamadou-ndiaye-devweb1997
             </a>
 
-            <!-- GitHub -->
             <a href="https://github.com/momo97ndiaye" target="_blank" rel="noopener noreferrer"
                class="flex items-center gap-3 text-sm text-[#94A3B8] hover:text-[#38BDF8] transition-colors">
               <div class="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
@@ -175,7 +143,6 @@
               github.com/momo97ndiaye
             </a>
 
-            <!-- WhatsApp -->
             <a href="https://wa.me/221781715366" target="_blank" rel="noopener noreferrer"
                class="flex items-center gap-3 text-sm text-[#94A3B8] hover:text-[#38BDF8] transition-colors">
               <div class="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
@@ -190,7 +157,6 @@
           </div>
         </div>
 
-        <!-- Location card -->
         <div class="glass rounded-2xl p-6">
           <div class="flex items-center gap-2 text-sm text-[#94A3B8] mb-2">
             <span>📍</span>
@@ -208,58 +174,104 @@
 </section>
 
 <script is:inline>
-  // ── Switch project type / budget fields based on language ──
-  window.addEventListener('langChange', (e) => {
-    const lang = e.detail;
-    ['field-project-type-fr', 'field-budget-fr'].forEach(id =>
-      document.getElementById(id)?.classList.toggle('hidden', lang === 'en'));
-    ['field-project-type-en', 'field-budget-en'].forEach(id =>
-      document.getElementById(id)?.classList.toggle('hidden', lang === 'fr'));
+(function () {
+  // ── Translations for dynamic fields ──
+  var projectTypeOptions = {
+    fr: ['SaaS sur mesure', 'API & Backend', 'DevOps', 'Application Web', 'Intégration IA', 'Autre'],
+    en: ['Custom SaaS', 'API & Backend', 'DevOps', 'Web App', 'AI Integration', 'Other']
+  };
+  var budgetOptions = {
+    fr: ['< 500k FCFA / 1\u202f000\u20ac', '500k\u20132M FCFA / 1\u202f000\u20135\u202f000\u20ac', '> 2M FCFA / 5\u202f000\u20ac+', 'À définir'],
+    en: ['< \u20ac1,000 / $1,000', '\u20ac1,000\u20135,000 / $1,000\u20135,500', '> \u20ac5,000 / $5,500+', 'Not sure yet']
+  };
+  var budgetValues = {
+    fr: ['< 500k FCFA / 1000€', '500k-2M FCFA / 1000-5000€', '> 2M FCFA / 5000€+', 'A definir'],
+    en: ['< €1,000 / $1,000', '€1,000-5,000 / $1,000-5,500', '> €5,000 / $5,500+', 'Not sure yet']
+  };
 
-    // Update success message text to current language
-    const isEN = lang === 'en';
-    const t = document.getElementById('success-title');
-    const b = document.getElementById('success-body');
-    const back = document.getElementById('success-back');
-    if (t) t.textContent = isEN ? 'Message sent!' : 'Message envoyé !';
-    if (b) b.textContent = isEN ? 'Thanks for reaching out. I'll get back to you within 24h.' : 'Merci pour votre demande. Je vous réponds sous 24h.';
-    if (back) back.textContent = isEN ? '← Send another request' : '← Envoyer une autre demande';
+  function applyLangToForm(lang) {
+    // Project type label + options
+    var labelPT = document.getElementById('label-project-type');
+    if (labelPT) labelPT.textContent = lang === 'en' ? 'Project type' : 'Type de projet';
+
+    var sel = document.getElementById('select-project-type');
+    if (sel) {
+      var current = sel.value;
+      while (sel.options.length > 1) sel.remove(1);
+      projectTypeOptions[lang].forEach(function(opt) {
+        var o = document.createElement('option');
+        o.value = opt;
+        o.textContent = opt;
+        sel.appendChild(o);
+      });
+      sel.value = current;
+    }
+
+    // Budget label + radio labels
+    var labelB = document.getElementById('label-budget');
+    if (labelB) labelB.textContent = lang === 'en' ? 'Approximate budget' : 'Budget approximatif';
+
+    var radios = document.querySelectorAll('#budget-options .radio-card');
+    radios.forEach(function(card, i) {
+      var span = card.querySelector('span');
+      var input = card.querySelector('input');
+      if (span) span.textContent = budgetOptions[lang][i];
+      if (input) input.value = budgetValues[lang][i];
+    });
+
+    // Success message
+    var t = document.getElementById('success-title');
+    var b = document.getElementById('success-body');
+    var back = document.getElementById('success-back');
+    if (t) t.textContent = lang === 'en' ? 'Message sent!' : 'Message envoyé !';
+    if (b) b.textContent = lang === 'en' ? 'Thanks for reaching out. I will get back to you within 24h.' : 'Merci pour votre demande. Je vous réponds sous 24h.';
+    if (back) back.textContent = lang === 'en' ? '\u2190 Send another request' : '\u2190 Envoyer une autre demande';
+  }
+
+  window.addEventListener('langChange', function(e) {
+    applyLangToForm(e.detail);
   });
 
-  // ── Netlify Forms — async submit, no page redirect ──
-  document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('contact-form');
-  const successBox = document.getElementById('form-success');
-  const submitBtn = document.getElementById('submit-btn');
+  // ── Netlify Forms — async submit ──
+  var form = document.getElementById('contact-form');
+  var successBox = document.getElementById('form-success');
+  var submitBtn = document.getElementById('submit-btn');
+  var successBack = document.getElementById('success-back');
 
   if (!form || !successBox || !submitBtn) return;
 
-  form.addEventListener('submit', async (e) => {
+  // "Send another" button
+  successBack.addEventListener('click', function() {
+    successBox.classList.add('hidden');
+    form.classList.remove('hidden');
+  });
+
+  form.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    // Disable button + show loading state
     submitBtn.disabled = true;
-    const originalText = submitBtn.textContent;
-    submitBtn.textContent = '…';
+    var originalText = submitBtn.textContent;
+    submitBtn.textContent = '...';
 
-    try {
-      const data = new FormData(form);
-      await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(data).toString(),
-      });
+    var data = new FormData(form);
 
-      // Show success, hide form
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(data).toString()
+    })
+    .then(function() {
       form.classList.add('hidden');
       successBox.classList.remove('hidden');
       form.reset();
-    } catch (_) {
-      // On error, re-enable button
       submitBtn.disabled = false;
       submitBtn.textContent = originalText;
-      alert('Une erreur est survenue. Réessayez ou contactez-moi directement par email.');
-    }
+    })
+    .catch(function() {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+      alert('Une erreur est survenue. Contactez-moi directement : momodoundiaye@gmail.com');
+    });
   });
-  }); // end DOMContentLoaded
+})();
 </script>
