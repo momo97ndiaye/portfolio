@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="404 — Page introuvable | Mamadou NDIAYE">
+  <div class="min-h-screen flex flex-col items-center justify-center px-6 text-center hero-grid">
+
+    <!-- Glow -->
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full opacity-10"
+           style="background:radial-gradient(ellipse, #38BDF8 0%, transparent 70%); filter:blur(60px);"></div>
+    </div>
+
+    <div class="relative z-10 flex flex-col items-center gap-6">
+      <span class="font-mono text-[#38BDF8] text-sm tracking-widest uppercase opacity-60">Erreur</span>
+      <h1 class="text-8xl font-extrabold gradient-text" style="font-family:'Bricolage Grotesque',sans-serif;">404</h1>
+      <p class="text-[#64748B] text-lg max-w-sm">Cette page n'existe pas ou a été déplacée.</p>
+      <a href="/" class="btn-primary mt-4">← Retour à l'accueil</a>
+    </div>
+
+  </div>
+</Layout>

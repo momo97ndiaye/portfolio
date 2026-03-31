@@ -1,0 +1,44 @@
+---
+// Stack technique — categories with tech badges, JetBrains Mono font
+const categories = [
+  { key: "Backend",      items: ["Java 21", "Spring Boot", "PostgreSQL", "Redis", "Flyway", "OpenPDF", "Maven"] },
+  { key: "Frontend",     items: ["Angular 18", "Vue 3", "Quasar", "React", "TypeScript", "Pinia", "Angular Material", "vue-i18n", "Tailwind"] },
+  { key: "DevOps",       items: ["Docker", "GitHub Actions", "Nginx", "Kubernetes", "Jenkins", "Linux"] },
+  { key: "Sécurité",     items: ["JWT", "OAuth2", "Keycloak"] },
+  { key: "Messaging",    items: ["Kafka", "RabbitMQ"] },
+  { key: "Cloud/Outils", items: ["Cloudflare R2", "Stripe", "SendGrid", "GitHub", "Netlify", "Postman", "UptimeRobot"] },
+];
+---
+
+<section id="stack" class="py-24 px-6" style="background:rgba(15,23,42,0.3);">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="mb-16" data-aos="fade-up">
+      <h2 class="section-title text-3xl sm:text-4xl text-[#F1F5F9]" data-i18n="stack.title">
+        Mes technologies
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {categories.map((cat, i) => (
+        <div class="glass rounded-2xl p-6" data-aos="fade-up" data-aos-delay={String(i * 50 + 100)}>
+          <!-- Category name -->
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-1 h-5 rounded-full" style="background:linear-gradient(to bottom, #38BDF8, #6366F1);"></div>
+            <h3 class="text-sm font-semibold text-[#94A3B8] uppercase tracking-widest font-mono"
+                data-i18n={`stack.categories.${i}.name`}>{cat.key}</h3>
+          </div>
+          <!-- Tech items -->
+          <div class="flex flex-wrap gap-2">
+            {cat.items.map(item => (
+              <span class="font-mono text-sm px-3 py-1.5 rounded-lg text-[#F1F5F9]"
+                    style="background:rgba(56,189,248,0.06); border:1px solid rgba(56,189,248,0.15);">
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,159 @@
+{
+  "nav": {
+    "services": "Services",
+    "stack": "Stack",
+    "projects": "Projects",
+    "process": "Process",
+    "testimonials": "Reviews",
+    "contact": "Contact",
+    "cta": "Contact me"
+  },
+  "hero": {
+    "badge": "Available for new projects ✦",
+    "title": "Mamadou NDIAYE",
+    "subtitle": "FullStack Engineer & SaaS Builder",
+    "description": "I design and develop robust web applications and SaaS products end-to-end. Based in Dakar, I work with startups and companies locally and remotely.",
+    "cta_primary": "View my services",
+    "cta_secondary": "Let's discuss your project",
+    "location": "Dakar, Senegal · Remote"
+  },
+  "services": {
+    "title": "What I build for you",
+    "items": [
+      {
+        "icon": "🏗️",
+        "title": "Custom SaaS Development",
+        "description": "End-to-end SaaS design and development, from backend to UI.",
+        "stack": "Spring Boot · Angular · React · PostgreSQL"
+      },
+      {
+        "icon": "⚙️",
+        "title": "REST API & Microservices",
+        "description": "Robust, documented and secured API design. Scalable decoupled architectures.",
+        "stack": "Spring Boot · Kafka · RabbitMQ · Swagger · OAuth2"
+      },
+      {
+        "icon": "🔐",
+        "title": "Security & Authentication",
+        "description": "SSO implementation, roles and access management on sensitive platforms.",
+        "stack": "Keycloak · OAuth2 · JWT"
+      },
+      {
+        "icon": "🚀",
+        "title": "DevOps & Deployment",
+        "description": "Containerization, CI/CD pipelines and monitoring. Code that actually runs in production.",
+        "stack": "Docker · Kubernetes · Jenkins"
+      },
+      {
+        "icon": "📱",
+        "title": "Web Apps & PWA",
+        "description": "Modern, responsive and performant interfaces. Mobile-first apps working offline.",
+        "stack": "Angular · React · PWA · Offline-first"
+      },
+      {
+        "icon": "🤖",
+        "title": "AI Integration",
+        "description": "Adding intelligent features to your apps: report generation, automation, business chatbots.",
+        "stack": "Anthropic API · Spring AI · LLM Integrations"
+      }
+    ]
+  },
+  "stack": {
+    "title": "My tech stack",
+    "categories": [
+      { "name": "Backend", "items": ["Java 21", "Spring Boot", "PostgreSQL", "Redis", "Flyway", "OpenPDF", "Maven"] },
+      { "name": "Frontend", "items": ["Angular 18", "Vue 3", "Quasar", "React", "TypeScript", "Pinia", "Angular Material", "vue-i18n", "Tailwind"] },
+      { "name": "DevOps", "items": ["Docker", "GitHub Actions", "Nginx", "Kubernetes", "Jenkins", "Linux"] },
+      { "name": "Security", "items": ["JWT", "OAuth2", "Keycloak"] },
+      { "name": "Messaging", "items": ["Kafka", "RabbitMQ"] },
+      { "name": "Cloud/Tools", "items": ["Cloudflare R2", "Stripe", "SendGrid", "GitHub", "Netlify", "Postman", "UptimeRobot"] }
+    ]
+  },
+  "projects": {
+    "title": "Featured projects",
+    "items": [
+      {
+        "name": "QuikStock",
+        "badge": "SaaS · In progress",
+        "description": "Mobile-first stock management and invoicing app for small merchants in West Africa. Offline-first, Mobile Money integration, FCFA support.",
+        "stack": "Java 21 · Spring Boot 3.3 · Vue 3 · Quasar · PWA · Pinia · PostgreSQL 16 · JWT · Flyway · Docker · GitHub Actions · Cloudflare R2",
+        "link": "https://github.com/momo97ndiaye",
+        "link_label": "GitHub"
+      },
+      {
+        "name": "MeetReport",
+        "badge": "SaaS B2B",
+        "description": "Automatic meeting report generation from Teams and Google Meet. Multi-tenant system, 4 pricing tiers.",
+        "stack": "Java 17 · Spring Boot · Angular 18 · TypeScript · Angular Material · PostgreSQL 16 · JWT · OAuth2 · Claude AI · Whisper · Stripe · SendGrid",
+        "link": "https://github.com/momo97ndiaye",
+        "link_label": "GitHub"
+      },
+      {
+        "name": "Client Projects",
+        "badge": "Confidential",
+        "description": "Institutional and fintech platforms for clients across West Africa. Microservices architecture, banking integrations, high availability.",
+        "stack": "Spring Boot · Angular · Keycloak · Docker · Kafka",
+        "link": null,
+        "link_label": null
+      }
+    ]
+  },
+  "process": {
+    "title": "How I work",
+    "steps": [
+      { "icon": "💬", "title": "Discovery", "description": "Analyzing your needs and goals" },
+      { "icon": "📐", "title": "Design", "description": "Technical architecture and wireframes" },
+      { "icon": "💻", "title": "Development", "description": "Iterative sprints with regular check-ins" },
+      { "icon": "✅", "title": "Testing", "description": "Functional and technical validation" },
+      { "icon": "🚀", "title": "Delivery", "description": "Deployment and knowledge transfer" }
+    ]
+  },
+  "testimonials": {
+    "title": "What clients say",
+    "placeholder": "Testimonial coming soon",
+    "items": [
+      {
+        "nameFR": "Ibrahima Koné",
+        "roleFR": "Co-founder & CTO — PayLink Côte d'Ivoire",
+        "quoteFR": "Mamadou delivered our mobile payment platform in record time. His microservices architecture with Keycloak solved our security challenges from day one. A developer who truly understands African business realities.",
+        "project": "Mobile payment platform"
+      },
+      {
+        "nameFR": "Sophie Marchand",
+        "roleFR": "Product Manager — Noveo Group, Paris",
+        "quoteFR": "Perfect remote collaboration. Mamadou integrates feedback quickly, his code is clean and well-documented. He hit the ground running on our Spring Boot / Angular stack with zero hand-holding from our side.",
+        "project": "Multi-tenant HR application"
+      },
+      {
+        "nameFR": "Moussa Diallo",
+        "roleFR": "Digital Director — Groupe Teranga, Dakar",
+        "quoteFR": "We brought Mamadou in to overhaul our internal management system. He proposed a clear architecture, set up CI/CD with Jenkins and Docker, and trained our team. Very professional, punctual, and genuinely responsive.",
+        "project": "Internal system overhaul"
+      },
+      {
+        "nameFR": "Aminata Bah",
+        "roleFR": "Founder — AgriConnect Guinea",
+        "quoteFR": "The PWA app Mamadou built works offline in our rural areas — that was our core constraint. He perfectly understood the local context and delivered something we didn't expect to afford at this budget.",
+        "project": "Offline-first agriculture PWA"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Let's start your project",
+    "subtitle": "Free quote within 24h",
+    "fields": {
+      "name": "Full name",
+      "email": "Email",
+      "project_type": "Project type",
+      "project_types": ["Custom SaaS", "API & Backend", "DevOps", "Web App", "AI Integration", "Other"],
+      "budget": "Approximate budget",
+      "budgets": ["< €1,000 / $1,000", "€1,000–5,000 / $1,000–5,500", "> €5,000 / $5,500+", "Not sure yet"],
+      "description": "Project description",
+      "submit": "Send my request"
+    }
+  },
+  "footer": {
+    "name": "Mamadou NDIAYE · FullStack Engineer & SaaS Builder",
+    "copy": "© 2025 · Dakar, Senegal"
+  }
+}

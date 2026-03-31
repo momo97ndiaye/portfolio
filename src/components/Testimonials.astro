@@ -1,0 +1,118 @@
+---
+// Testimonials — simulated realistic reviews (bilingual)
+const testimonials = [
+  {
+    nameFR: "Ibrahima Koné",
+    nameEN: "Ibrahima Koné",
+    roleFR: "Co-fondateur & CTO — PayLink Côte d'Ivoire",
+    roleEN: "Co-founder & CTO — PayLink Côte d'Ivoire",
+    avatarInitials: "IK",
+    avatarColor: "#38BDF8",
+    quoteColor: "#38BDF8",
+    quoteFR: "Mamadou a livré notre plateforme de paiement mobile en un temps record. Son architecture microservices avec Keycloak a résolu nos problèmes de sécurité dès le départ. Un développeur qui comprend vraiment les enjeux métier africains.",
+    quoteEN: "Mamadou delivered our mobile payment platform in record time. His microservices architecture with Keycloak solved our security challenges from day one. A developer who truly understands African business realities.",
+    rating: 5,
+    project: "Plateforme de paiement mobile",
+  },
+  {
+    nameFR: "Sophie Marchand",
+    nameEN: "Sophie Marchand",
+    roleFR: "Product Manager — Noveo Group, Paris",
+    roleEN: "Product Manager — Noveo Group, Paris",
+    avatarInitials: "SM",
+    avatarColor: "#6366F1",
+    quoteColor: "#6366F1",
+    quoteFR: "Collaboration parfaite en remote. Mamadou intègre les feedbacks rapidement, son code est propre et bien documenté. Il a su prendre en main notre stack Spring Boot / Angular sans aucune montée en charge de notre côté.",
+    quoteEN: "Perfect remote collaboration. Mamadou integrates feedback quickly, his code is clean and well-documented. He hit the ground running on our Spring Boot / Angular stack with zero hand-holding from our side.",
+    rating: 5,
+    project: "Application RH multi-tenant",
+  },
+  {
+    nameFR: "Moussa Diallo",
+    nameEN: "Moussa Diallo",
+    roleFR: "Directeur Digital — Groupe Teranga, Dakar",
+    roleEN: "Digital Director — Groupe Teranga, Dakar",
+    avatarInitials: "MD",
+    avatarColor: "#38BDF8",
+    quoteColor: "#38BDF8",
+    quoteFR: "Nous avons fait appel à Mamadou pour refondre notre système de gestion interne. Il a proposé une architecture claire, mis en place le CI/CD avec Jenkins et Docker, et formé notre équipe. Très professionnel, ponctuel et à l'écoute.",
+    quoteEN: "We brought Mamadou in to overhaul our internal management system. He proposed a clear architecture, set up CI/CD with Jenkins and Docker, and trained our team. Very professional, punctual, and genuinely responsive.",
+    rating: 5,
+    project: "Refonte SI interne",
+  },
+  {
+    nameFR: "Aminata Bah",
+    nameEN: "Aminata Bah",
+    roleFR: "Fondatrice — AgriConnect Guinée",
+    roleEN: "Founder — AgriConnect Guinea",
+    avatarInitials: "AB",
+    avatarColor: "#6366F1",
+    quoteColor: "#6366F1",
+    quoteFR: "L'application PWA développée par Mamadou fonctionne hors-ligne dans nos zones rurales — c'était notre contrainte principale. Il a parfaitement compris le contexte local et livré quelque chose qu'on n'espérait pas avoir pour ce budget.",
+    quoteEN: "The PWA app Mamadou built works offline in our rural areas — that was our core constraint. He perfectly understood the local context and delivered something we didn't expect to afford at this budget.",
+    rating: 5,
+    project: "App agricole PWA offline-first",
+  },
+];
+---
+
+<section id="testimonials" class="py-24 px-6 hidden">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="mb-16" data-aos="fade-up">
+      <h2 class="section-title text-3xl sm:text-4xl text-[#F1F5F9]" data-i18n="testimonials.title">
+        Ce que disent mes clients
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {testimonials.map((t, i) => (
+        <div
+          class="glass glass-hover rounded-2xl p-7 flex flex-col gap-5"
+          data-aos="fade-up"
+          data-aos-delay={String(i * 80 + 80)}
+        >
+          <!-- Stars -->
+          <div class="flex gap-1">
+            {Array.from({ length: t.rating }).map(() => (
+              <svg width="14" height="14" viewBox="0 0 24 24" fill={t.avatarColor}>
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            ))}
+          </div>
+
+          <!-- Quote -->
+          <blockquote class="flex-1">
+            <p class="text-[#94A3B8] text-sm leading-relaxed italic" data-i18n={`testimonials.items.${i}.quoteFR`}>
+              "{t.quoteFR}"
+            </p>
+          </blockquote>
+
+          <!-- Project tag -->
+          <div class="flex items-center gap-1.5">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke={t.avatarColor} stroke-width="2" opacity="0.7">
+              <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+            </svg>
+            <span class="font-mono text-xs" style={`color:${t.avatarColor}; opacity:0.7;`}
+                  data-i18n={`testimonials.items.${i}.project`}>{t.project}</span>
+          </div>
+
+          <!-- Author -->
+          <div class="flex items-center gap-3 pt-4 border-t border-[rgba(255,255,255,0.06)]">
+            <!-- Avatar -->
+            <div class="w-11 h-11 rounded-full flex items-center justify-center shrink-0 font-bold text-sm"
+                 style={`background:${t.avatarColor}18; border:1px solid ${t.avatarColor}30; color:${t.avatarColor};`}>
+              {t.avatarInitials}
+            </div>
+            <!-- Name + role -->
+            <div class="flex flex-col gap-0.5">
+              <span class="text-sm font-semibold text-[#F1F5F9]" data-i18n={`testimonials.items.${i}.nameFR`}>{t.nameFR}</span>
+              <span class="text-xs text-[#475569]" data-i18n={`testimonials.items.${i}.roleFR`}>{t.roleFR}</span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

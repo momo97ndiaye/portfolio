@@ -1,0 +1,125 @@
+---
+// Services — 6 glassmorphism cards, 3x2 desktop, i18n
+---
+
+<section id="services" class="py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+
+    <!-- Section header -->
+    <div class="mb-16" data-aos="fade-up">
+      <h2 class="section-title text-3xl sm:text-4xl text-[#F1F5F9]" data-i18n="services.title">
+        Ce que je construis pour vous
+      </h2>
+    </div>
+
+    <!-- Cards grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="services-grid">
+
+      <!-- Card 1 -->
+      <div class="glass glass-hover rounded-2xl p-6 flex flex-col gap-4"
+           data-aos="fade-up" data-aos-delay="100">
+        <div class="text-3xl">🏗️</div>
+        <h3 class="text-lg font-semibold text-[#F1F5F9]" data-i18n="services.items.0.title">
+          Développement SaaS sur mesure
+        </h3>
+        <p class="text-sm text-[#64748B] leading-relaxed flex-1" data-i18n="services.items.0.description">
+          Conception et développement d'applications SaaS complètes de A à Z, du backend à l'interface utilisateur.
+        </p>
+        <div class="flex flex-wrap gap-1.5 mt-auto pt-3 border-t border-[rgba(255,255,255,0.05)]">
+          <span class="tech-badge">Spring Boot</span>
+          <span class="tech-badge">Angular</span>
+          <span class="tech-badge">React</span>
+          <span class="tech-badge">PostgreSQL</span>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="glass glass-hover rounded-2xl p-6 flex flex-col gap-4"
+           data-aos="fade-up" data-aos-delay="150">
+        <div class="text-3xl">⚙️</div>
+        <h3 class="text-lg font-semibold text-[#F1F5F9]" data-i18n="services.items.1.title">
+          API REST & Microservices
+        </h3>
+        <p class="text-sm text-[#64748B] leading-relaxed flex-1" data-i18n="services.items.1.description">
+          Design d'APIs robustes, documentées et sécurisées. Architectures découplées prêtes à monter en charge.
+        </p>
+        <div class="flex flex-wrap gap-1.5 mt-auto pt-3 border-t border-[rgba(255,255,255,0.05)]">
+          <span class="tech-badge">Spring Boot</span>
+          <span class="tech-badge">Kafka</span>
+          <span class="tech-badge">RabbitMQ</span>
+          <span class="tech-badge">OAuth2</span>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="glass glass-hover rounded-2xl p-6 flex flex-col gap-4"
+           data-aos="fade-up" data-aos-delay="200">
+        <div class="text-3xl">🔐</div>
+        <h3 class="text-lg font-semibold text-[#F1F5F9]" data-i18n="services.items.2.title">
+          Sécurité & Authentification
+        </h3>
+        <p class="text-sm text-[#64748B] leading-relaxed flex-1" data-i18n="services.items.2.description">
+          Mise en place de systèmes SSO, gestion des rôles et des accès sur des plateformes sensibles.
+        </p>
+        <div class="flex flex-wrap gap-1.5 mt-auto pt-3 border-t border-[rgba(255,255,255,0.05)]">
+          <span class="tech-badge">Keycloak</span>
+          <span class="tech-badge">OAuth2</span>
+          <span class="tech-badge">JWT</span>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="glass glass-hover rounded-2xl p-6 flex flex-col gap-4"
+           data-aos="fade-up" data-aos-delay="100">
+        <div class="text-3xl">🚀</div>
+        <h3 class="text-lg font-semibold text-[#F1F5F9]" data-i18n="services.items.3.title">
+          DevOps & Mise en production
+        </h3>
+        <p class="text-sm text-[#64748B] leading-relaxed flex-1" data-i18n="services.items.3.description">
+          Containerisation, pipelines CI/CD et supervision. Du code qui tourne vraiment en production.
+        </p>
+        <div class="flex flex-wrap gap-1.5 mt-auto pt-3 border-t border-[rgba(255,255,255,0.05)]">
+          <span class="tech-badge">Docker</span>
+          <span class="tech-badge">Kubernetes</span>
+          <span class="tech-badge">Jenkins</span>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="glass glass-hover rounded-2xl p-6 flex flex-col gap-4"
+           data-aos="fade-up" data-aos-delay="150">
+        <div class="text-3xl">📱</div>
+        <h3 class="text-lg font-semibold text-[#F1F5F9]" data-i18n="services.items.4.title">
+          Applications Web & PWA
+        </h3>
+        <p class="text-sm text-[#64748B] leading-relaxed flex-1" data-i18n="services.items.4.description">
+          Interfaces modernes, responsives et performantes. Applications mobile-first fonctionnant hors ligne.
+        </p>
+        <div class="flex flex-wrap gap-1.5 mt-auto pt-3 border-t border-[rgba(255,255,255,0.05)]">
+          <span class="tech-badge">Angular</span>
+          <span class="tech-badge">React</span>
+          <span class="tech-badge">PWA</span>
+          <span class="tech-badge">Offline-first</span>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="glass glass-hover rounded-2xl p-6 flex flex-col gap-4"
+           data-aos="fade-up" data-aos-delay="200">
+        <div class="text-3xl">🤖</div>
+        <h3 class="text-lg font-semibold text-[#F1F5F9]" data-i18n="services.items.5.title">
+          Intégration IA
+        </h3>
+        <p class="text-sm text-[#64748B] leading-relaxed flex-1" data-i18n="services.items.5.description">
+          Ajout de fonctionnalités intelligentes dans vos applications : génération de rapports, automatisation, chatbots métier.
+        </p>
+        <div class="flex flex-wrap gap-1.5 mt-auto pt-3 border-t border-[rgba(255,255,255,0.05)]">
+          <span class="tech-badge">Anthropic API</span>
+          <span class="tech-badge">Spring AI</span>
+          <span class="tech-badge">LLM</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,260 @@
+---
+// Contact — Netlify Forms, i18n, budget radio, social links
+---
+
+<section id="contact" class="py-24 px-6" style="background:rgba(15,23,42,0.3);">
+  <div class="max-w-5xl mx-auto">
+
+    <!-- Header -->
+    <div class="mb-12 text-center" data-aos="fade-up">
+      <h2 class="section-title text-3xl sm:text-4xl text-[#F1F5F9] inline-block" data-i18n="contact.title">
+        Démarrons votre projet
+      </h2>
+      <p class="text-[#38BDF8] font-mono text-sm mt-6 flex items-center justify-center gap-2">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+        </svg>
+        <span data-i18n="contact.subtitle">Devis gratuit sous 24h</span>
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-10">
+
+      <!-- Form — takes 3/5 -->
+      <div class="lg:col-span-3" data-aos="fade-up" data-aos-delay="100">
+
+        <!-- Success state (hidden by default) -->
+        <div id="form-success" class="hidden glass rounded-2xl p-10 flex flex-col items-center gap-5 text-center">
+          <div class="w-16 h-16 rounded-full flex items-center justify-center"
+               style="background:rgba(56,189,248,0.1); border:1px solid rgba(56,189,248,0.3);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#38BDF8" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[#F1F5F9]" style="font-family:'Bricolage Grotesque',sans-serif;"
+              id="success-title">Message envoyé !</h3>
+          <p class="text-[#64748B] text-sm leading-relaxed" id="success-body">
+            Merci pour votre demande. Je vous réponds sous 24h.
+          </p>
+          <button onclick="document.getElementById('form-success').classList.add('hidden'); document.getElementById('contact-form').classList.remove('hidden');"
+                  class="btn-outline text-sm mt-2" id="success-back">
+            ← Envoyer une autre demande
+          </button>
+        </div>
+
+        <form
+          id="contact-form"
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          class="glass rounded-2xl p-8 flex flex-col gap-6"
+        >
+          <!-- Netlify hidden fields -->
+          <input type="hidden" name="form-name" value="contact" />
+          <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+          <!-- Name -->
+          <div class="flex flex-col gap-2">
+            <label class="text-sm font-medium text-[#94A3B8]" data-i18n="contact.fields.name">Nom complet</label>
+            <input type="text" name="name" required class="form-input"
+                   placeholder="Mamadou Diallo" />
+          </div>
+
+          <!-- Email -->
+          <div class="flex flex-col gap-2">
+            <label class="text-sm font-medium text-[#94A3B8]" data-i18n="contact.fields.email">Email</label>
+            <input type="email" name="email" required class="form-input"
+                   placeholder="mamadou@example.com" />
+          </div>
+
+          <!-- Project type select — FR options -->
+          <div class="flex flex-col gap-2" id="field-project-type-fr">
+            <label class="text-sm font-medium text-[#94A3B8]" data-i18n="contact.fields.project_type">Type de projet</label>
+            <select name="project_type" class="form-input">
+              <option value="" disabled selected>—</option>
+              <option>SaaS sur mesure</option>
+              <option>API &amp; Backend</option>
+              <option>DevOps</option>
+              <option>Application Web</option>
+              <option>Intégration IA</option>
+              <option>Autre</option>
+            </select>
+          </div>
+          <!-- Project type select — EN options (hidden by default) -->
+          <div class="flex flex-col gap-2 hidden" id="field-project-type-en">
+            <label class="text-sm font-medium text-[#94A3B8]">Project type</label>
+            <select name="project_type_en" class="form-input">
+              <option value="" disabled selected>—</option>
+              <option>Custom SaaS</option>
+              <option>API &amp; Backend</option>
+              <option>DevOps</option>
+              <option>Web App</option>
+              <option>AI Integration</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <!-- Budget radio — FR -->
+          <div class="flex flex-col gap-3" id="field-budget-fr">
+            <label class="text-sm font-medium text-[#94A3B8]" data-i18n="contact.fields.budget">Budget approximatif</label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <label class="radio-card"><input type="radio" name="budget" value="<500k FCFA / 1 000€" /> &lt; 500k FCFA / 1 000€</label>
+              <label class="radio-card"><input type="radio" name="budget" value="500k-2M FCFA" /> 500k–2M FCFA / 1 000–5 000€</label>
+              <label class="radio-card"><input type="radio" name="budget" value=">2M FCFA / 5 000€+" /> &gt; 2M FCFA / 5 000€+</label>
+              <label class="radio-card"><input type="radio" name="budget" value="A définir" /> À définir</label>
+            </div>
+          </div>
+          <!-- Budget radio — EN -->
+          <div class="flex flex-col gap-3 hidden" id="field-budget-en">
+            <label class="text-sm font-medium text-[#94A3B8]">Approximate budget</label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <label class="radio-card"><input type="radio" name="budget_en" value="<€1,000/$1,000" /> &lt; €1,000 / $1,000</label>
+              <label class="radio-card"><input type="radio" name="budget_en" value="€1,000–5,000/$1,000–5,500" /> €1,000–5,000 / $1,000–5,500</label>
+              <label class="radio-card"><input type="radio" name="budget_en" value=">€5,000/$5,500+" /> &gt; €5,000 / $5,500+</label>
+              <label class="radio-card"><input type="radio" name="budget_en" value="Not sure yet" /> Not sure yet</label>
+            </div>
+          </div>
+
+          <!-- Description -->
+          <div class="flex flex-col gap-2">
+            <label class="text-sm font-medium text-[#94A3B8]" data-i18n="contact.fields.description">Description du projet</label>
+            <textarea name="description" required rows="4" class="form-input resize-none"
+                      placeholder="Décrivez votre projet, vos objectifs, vos contraintes..."></textarea>
+          </div>
+
+          <!-- Submit -->
+          <button type="submit" class="btn-indigo w-full text-center" id="submit-btn" data-i18n="contact.fields.submit">
+            Envoyer ma demande
+          </button>
+        </form>
+      </div>
+
+      <!-- Contact info — takes 2/5 -->
+      <div class="lg:col-span-2 flex flex-col gap-6" data-aos="fade-up" data-aos-delay="200">
+
+        <!-- Info card -->
+        <div class="glass rounded-2xl p-6 flex flex-col gap-5">
+          <h3 class="text-base font-semibold text-[#F1F5F9]">Mamadou NDIAYE</h3>
+          <div class="flex flex-col gap-4">
+
+            <!-- Email -->
+            <a href="mailto:momodoundiaye@gmail.com"
+               class="flex items-center gap-3 text-sm text-[#94A3B8] hover:text-[#38BDF8] transition-colors group">
+              <div class="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
+                   style="background:rgba(56,189,248,0.08);border:1px solid rgba(56,189,248,0.15);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-[#38BDF8]">
+                  <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+              </div>
+              momodoundiaye@gmail.com
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com/in/mamadou-ndiaye-devweb1997" target="_blank" rel="noopener noreferrer"
+               class="flex items-center gap-3 text-sm text-[#94A3B8] hover:text-[#38BDF8] transition-colors">
+              <div class="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
+                   style="background:rgba(56,189,248,0.08);border:1px solid rgba(56,189,248,0.15);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="text-[#38BDF8]">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+                </svg>
+              </div>
+              linkedin.com/in/mamadou-ndiaye-devweb1997
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://github.com/momo97ndiaye" target="_blank" rel="noopener noreferrer"
+               class="flex items-center gap-3 text-sm text-[#94A3B8] hover:text-[#38BDF8] transition-colors">
+              <div class="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
+                   style="background:rgba(56,189,248,0.08);border:1px solid rgba(56,189,248,0.15);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="text-[#38BDF8]">
+                  <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                </svg>
+              </div>
+              github.com/momo97ndiaye
+            </a>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/221781715366" target="_blank" rel="noopener noreferrer"
+               class="flex items-center gap-3 text-sm text-[#94A3B8] hover:text-[#38BDF8] transition-colors">
+              <div class="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
+                   style="background:rgba(56,189,248,0.08);border:1px solid rgba(56,189,248,0.15);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="text-[#38BDF8]">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                  <path d="M12.004 2C6.476 2 2 6.478 2 12.007a9.955 9.955 0 001.405 5.147L2 22l5.019-1.378A9.958 9.958 0 0012.004 22C17.523 22 22 17.522 22 12.007 22 6.478 17.523 2 12.004 2zm0 18.087a8.156 8.156 0 01-4.207-1.166l-.3-.181-3.12.857.842-3.048-.198-.314a8.156 8.156 0 01-1.234-4.228c0-4.519 3.673-8.193 8.217-8.193 4.537 0 8.218 3.674 8.218 8.193 0 4.52-3.681 8.08-8.218 8.08z"/>
+                </svg>
+              </div>
+              +221 78 171 53 66
+            </a>
+          </div>
+        </div>
+
+        <!-- Location card -->
+        <div class="glass rounded-2xl p-6">
+          <div class="flex items-center gap-2 text-sm text-[#94A3B8] mb-2">
+            <span>📍</span>
+            <span>Dakar, Sénégal · Remote worldwide</span>
+          </div>
+          <div class="flex items-center gap-2 text-xs text-[#475569] font-mono">
+            <span class="w-2 h-2 rounded-full bg-[#38BDF8] animate-pulse"></span>
+            <span data-i18n="hero.badge">Disponible pour nouveaux projets</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  // ── Switch project type / budget fields based on language ──
+  window.addEventListener('langChange', (e) => {
+    const lang = e.detail;
+    ['field-project-type-fr', 'field-budget-fr'].forEach(id =>
+      document.getElementById(id)?.classList.toggle('hidden', lang === 'en'));
+    ['field-project-type-en', 'field-budget-en'].forEach(id =>
+      document.getElementById(id)?.classList.toggle('hidden', lang === 'fr'));
+
+    // Update success message text to current language
+    const isEN = lang === 'en';
+    const t = document.getElementById('success-title');
+    const b = document.getElementById('success-body');
+    const back = document.getElementById('success-back');
+    if (t) t.textContent = isEN ? 'Message sent!' : 'Message envoyé !';
+    if (b) b.textContent = isEN ? 'Thanks for reaching out. I'll get back to you within 24h.' : 'Merci pour votre demande. Je vous réponds sous 24h.';
+    if (back) back.textContent = isEN ? '← Send another request' : '← Envoyer une autre demande';
+  });
+
+  // ── Netlify Forms — async submit, no page redirect ──
+  const form = document.getElementById('contact-form');
+  const successBox = document.getElementById('form-success');
+  const submitBtn = document.getElementById('submit-btn');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Disable button + show loading state
+    submitBtn.disabled = true;
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = '…';
+
+    try {
+      const data = new FormData(form);
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(data).toString(),
+      });
+
+      // Show success, hide form
+      form.classList.add('hidden');
+      successBox.classList.remove('hidden');
+      form.reset();
+    } catch (_) {
+      // On error, re-enable button
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+      alert('Une erreur est survenue. Réessayez ou contactez-moi directement par email.');
+    }
+  });
+</script>

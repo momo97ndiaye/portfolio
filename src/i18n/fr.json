@@ -1,0 +1,159 @@
+{
+  "nav": {
+    "services": "Services",
+    "stack": "Stack",
+    "projects": "Projets",
+    "process": "Processus",
+    "testimonials": "Avis",
+    "contact": "Contact",
+    "cta": "Me contacter"
+  },
+  "hero": {
+    "badge": "Disponible pour nouveaux projets ✦",
+    "title": "Mamadou NDIAYE",
+    "subtitle": "FullStack Engineer & SaaS Builder",
+    "description": "Je conçois et développe des applications web robustes et des SaaS de A à Z. Basé à Dakar, je travaille avec des startups et entreprises en local et à distance.",
+    "cta_primary": "Voir mes services",
+    "cta_secondary": "Discutons de votre projet",
+    "location": "Dakar, Sénégal · Remote"
+  },
+  "services": {
+    "title": "Ce que je construis pour vous",
+    "items": [
+      {
+        "icon": "🏗️",
+        "title": "Développement SaaS sur mesure",
+        "description": "Conception et développement d'applications SaaS complètes de A à Z, du backend à l'interface utilisateur.",
+        "stack": "Spring Boot · Angular · React · PostgreSQL"
+      },
+      {
+        "icon": "⚙️",
+        "title": "API REST & Microservices",
+        "description": "Design d'APIs robustes, documentées et sécurisées. Architectures découplées prêtes à monter en charge.",
+        "stack": "Spring Boot · Kafka · RabbitMQ · Swagger · OAuth2"
+      },
+      {
+        "icon": "🔐",
+        "title": "Sécurité & Authentification",
+        "description": "Mise en place de systèmes SSO, gestion des rôles et des accès sur des plateformes sensibles.",
+        "stack": "Keycloak · OAuth2 · JWT"
+      },
+      {
+        "icon": "🚀",
+        "title": "DevOps & Mise en production",
+        "description": "Containerisation, pipelines CI/CD et supervision. Du code qui tourne vraiment en production.",
+        "stack": "Docker · Kubernetes · Jenkins"
+      },
+      {
+        "icon": "📱",
+        "title": "Applications Web & PWA",
+        "description": "Interfaces modernes, responsives et performantes. Applications mobile-first fonctionnant hors ligne.",
+        "stack": "Angular · React · PWA · Offline-first"
+      },
+      {
+        "icon": "🤖",
+        "title": "Intégration IA",
+        "description": "Ajout de fonctionnalités intelligentes dans vos applications : génération de rapports, automatisation, chatbots métier.",
+        "stack": "Anthropic API · Spring AI · LLM Integrations"
+      }
+    ]
+  },
+  "stack": {
+    "title": "Mes technologies",
+    "categories": [
+      { "name": "Backend", "items": ["Java 21", "Spring Boot", "PostgreSQL", "Redis", "Flyway", "OpenPDF", "Maven"] },
+      { "name": "Frontend", "items": ["Angular 18", "Vue 3", "Quasar", "React", "TypeScript", "Pinia", "Angular Material", "vue-i18n", "Tailwind"] },
+      { "name": "DevOps", "items": ["Docker", "GitHub Actions", "Nginx", "Kubernetes", "Jenkins", "Linux"] },
+      { "name": "Sécurité", "items": ["JWT", "OAuth2", "Keycloak"] },
+      { "name": "Messaging", "items": ["Kafka", "RabbitMQ"] },
+      { "name": "Cloud/Outils", "items": ["Cloudflare R2", "Stripe", "SendGrid", "GitHub", "Netlify", "Postman", "UptimeRobot"] }
+    ]
+  },
+  "projects": {
+    "title": "Projets réalisés",
+    "items": [
+      {
+        "name": "QuikStock",
+        "badge": "SaaS · En cours",
+        "description": "Application mobile-first de gestion de stock et facturation pour les petits commerçants en Afrique de l'Ouest. Offline-first, intégration Mobile Money, support FCFA.",
+        "stack": "Java 21 · Spring Boot 3.3 · Vue 3 · Quasar · PWA · Pinia · PostgreSQL 16 · JWT · Flyway · Docker · GitHub Actions · Cloudflare R2",
+        "link": "https://github.com/momo97ndiaye",
+        "link_label": "GitHub"
+      },
+      {
+        "name": "MeetReport",
+        "badge": "SaaS B2B",
+        "description": "Génération automatique de comptes-rendus de réunions depuis Teams et Google Meet. Système multi-tenant, 4 niveaux tarifaires.",
+        "stack": "Java 17 · Spring Boot · Angular 18 · TypeScript · Angular Material · PostgreSQL 16 · JWT · OAuth2 · Claude AI · Whisper · Stripe · SendGrid",
+        "link": "https://github.com/momo97ndiaye",
+        "link_label": "GitHub"
+      },
+      {
+        "name": "Projets Clients",
+        "badge": "Confidentiel",
+        "description": "Développement de plateformes institutionnelles et fintech pour des clients en Afrique de l'Ouest. Architectures microservices, intégrations bancaires, haute disponibilité.",
+        "stack": "Spring Boot · Angular · Keycloak · Docker · Kafka",
+        "link": null,
+        "link_label": null
+      }
+    ]
+  },
+  "process": {
+    "title": "Comment je travaille",
+    "steps": [
+      { "icon": "💬", "title": "Découverte", "description": "Analyse de vos besoins et objectifs" },
+      { "icon": "📐", "title": "Conception", "description": "Architecture technique et maquettes" },
+      { "icon": "💻", "title": "Développement", "description": "Sprints itératifs avec points réguliers" },
+      { "icon": "✅", "title": "Tests & Recette", "description": "Validation fonctionnelle et technique" },
+      { "icon": "🚀", "title": "Livraison", "description": "Déploiement et transfert de compétences" }
+    ]
+  },
+  "testimonials": {
+    "title": "Ce que disent mes clients",
+    "placeholder": "Témoignage à venir",
+    "items": [
+      {
+        "nameFR": "Ibrahima Koné",
+        "roleFR": "Co-fondateur & CTO — PayLink Côte d'Ivoire",
+        "quoteFR": "Mamadou a livré notre plateforme de paiement mobile en un temps record. Son architecture microservices avec Keycloak a résolu nos problèmes de sécurité dès le départ. Un développeur qui comprend vraiment les enjeux métier africains.",
+        "project": "Plateforme de paiement mobile"
+      },
+      {
+        "nameFR": "Sophie Marchand",
+        "roleFR": "Product Manager — Noveo Group, Paris",
+        "quoteFR": "Collaboration parfaite en remote. Mamadou intègre les feedbacks rapidement, son code est propre et bien documenté. Il a su prendre en main notre stack Spring Boot / Angular sans aucune montée en charge de notre côté.",
+        "project": "Application RH multi-tenant"
+      },
+      {
+        "nameFR": "Moussa Diallo",
+        "roleFR": "Directeur Digital — Groupe Teranga, Dakar",
+        "quoteFR": "Nous avons fait appel à Mamadou pour refondre notre système de gestion interne. Il a proposé une architecture claire, mis en place le CI/CD avec Jenkins et Docker, et formé notre équipe. Très professionnel, ponctuel et à l'écoute.",
+        "project": "Refonte SI interne"
+      },
+      {
+        "nameFR": "Aminata Bah",
+        "roleFR": "Fondatrice — AgriConnect Guinée",
+        "quoteFR": "L'application PWA développée par Mamadou fonctionne hors-ligne dans nos zones rurales — c'était notre contrainte principale. Il a parfaitement compris le contexte local et livré quelque chose qu'on n'espérait pas avoir pour ce budget.",
+        "project": "App agricole PWA offline-first"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Démarrons votre projet",
+    "subtitle": "Devis gratuit sous 24h",
+    "fields": {
+      "name": "Nom complet",
+      "email": "Email",
+      "project_type": "Type de projet",
+      "project_types": ["SaaS sur mesure", "API & Backend", "DevOps", "Application Web", "Intégration IA", "Autre"],
+      "budget": "Budget approximatif",
+      "budgets": ["< 500k FCFA / 1 000€", "500k–2M FCFA / 1 000–5 000€", "> 2M FCFA / 5 000€+", "À définir"],
+      "description": "Description du projet",
+      "submit": "Envoyer ma demande"
+    }
+  },
+  "footer": {
+    "name": "Mamadou NDIAYE · FullStack Engineer & SaaS Builder",
+    "copy": "© 2025 · Dakar, Sénégal"
+  }
+}

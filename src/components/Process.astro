@@ -1,0 +1,72 @@
+---
+// Process — 5-step timeline, horizontal desktop / vertical mobile
+const steps = [
+  { num: "01", icon: "💬", titleKey: "process.steps.0.title", descKey: "process.steps.0.description", titleFR: "Découverte", descFR: "Analyse de vos besoins et objectifs" },
+  { num: "02", icon: "📐", titleKey: "process.steps.1.title", descKey: "process.steps.1.description", titleFR: "Conception", descFR: "Architecture technique et maquettes" },
+  { num: "03", icon: "💻", titleKey: "process.steps.2.title", descKey: "process.steps.2.description", titleFR: "Développement", descFR: "Sprints itératifs avec points réguliers" },
+  { num: "04", icon: "✅", titleKey: "process.steps.3.title", descKey: "process.steps.3.description", titleFR: "Tests & Recette", descFR: "Validation fonctionnelle et technique" },
+  { num: "05", icon: "🚀", titleKey: "process.steps.4.title", descKey: "process.steps.4.description", titleFR: "Livraison", descFR: "Déploiement et transfert de compétences" },
+];
+---
+
+<section id="process" class="py-24 px-6" style="background:rgba(15,23,42,0.3);">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="mb-16" data-aos="fade-up">
+      <h2 class="section-title text-3xl sm:text-4xl text-[#F1F5F9]" data-i18n="process.title">
+        Comment je travaille
+      </h2>
+    </div>
+
+    <!-- Desktop: horizontal timeline -->
+    <div class="hidden md:block" data-aos="fade-up" data-aos-delay="100">
+      <!-- Connector line -->
+      <div class="relative flex items-start">
+        <div class="absolute top-8 left-[10%] right-[10%] h-px timeline-line opacity-30"></div>
+
+        <div class="grid grid-cols-5 w-full gap-4">
+          {steps.map((step, i) => (
+            <div class="flex flex-col items-center text-center gap-3 relative">
+              <!-- Step circle -->
+              <div class="relative z-10 w-16 h-16 rounded-full flex items-center justify-center glass"
+                   style={`border:1px solid ${i === 0 ? 'rgba(56,189,248,0.4)' : 'rgba(255,255,255,0.08)'};`}>
+                <span class="text-2xl">{step.icon}</span>
+              </div>
+              <!-- Step number -->
+              <span class="font-mono text-xs text-[#475569]">{step.num}</span>
+              <!-- Title -->
+              <h3 class="font-semibold text-sm text-[#F1F5F9]" data-i18n={step.titleKey}>{step.titleFR}</h3>
+              <!-- Description -->
+              <p class="text-xs text-[#64748B] leading-relaxed" data-i18n={step.descKey}>{step.descFR}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile: vertical timeline -->
+    <div class="md:hidden flex flex-col gap-0">
+      {steps.map((step, i) => (
+        <div class="flex gap-4" data-aos="fade-up" data-aos-delay={String(i * 80 + 100)}>
+          <!-- Left: circle + line -->
+          <div class="flex flex-col items-center gap-0 shrink-0">
+            <div class="w-12 h-12 rounded-full flex items-center justify-center glass shrink-0"
+                 style={`border:1px solid ${i === 0 ? 'rgba(56,189,248,0.4)' : 'rgba(255,255,255,0.08)'};`}>
+              <span class="text-xl">{step.icon}</span>
+            </div>
+            {i < steps.length - 1 && (
+              <div class="w-px flex-1 min-h-8 my-1" style="background:linear-gradient(to bottom,rgba(56,189,248,0.3),rgba(99,102,241,0.1));"></div>
+            )}
+          </div>
+          <!-- Right: content -->
+          <div class="pb-8 pt-2">
+            <span class="font-mono text-xs text-[#475569] block mb-1">{step.num}</span>
+            <h3 class="font-semibold text-[#F1F5F9] mb-1" data-i18n={step.titleKey}>{step.titleFR}</h3>
+            <p class="text-sm text-[#64748B]" data-i18n={step.descKey}>{step.descFR}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

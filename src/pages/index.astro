@@ -1,17 +1,103 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import Stack from '../components/Stack.astro';
+import Projects from '../components/Projects.astro';
+import Process from '../components/Process.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 
+// Import both translation files for inline embedding
+import fr from '../i18n/fr.json';
+import en from '../i18n/en.json';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+  <Navbar />
+  <main>
+    <Hero />
+    <Services />
+    <Stack />
+    <Projects />
+    <Process />
+    <Contact />
+  </main>
+  <Footer />
+</Layout>
+
+<!-- ── Client-side i18n engine ── -->
+<script define:vars={{ fr, en }} is:inline>
+(function () {
+  // Flatten nested JSON into dot-notation keys: { "nav.services": "Services", ... }
+  function flatten(obj, prefix = '') {
+    return Object.entries(obj).reduce((acc, [key, val]) => {
+      const fullKey = prefix ? `${prefix}.${key}` : key;
+      if (val !== null && typeof val === 'object' && !Array.isArray(val)) {
+        Object.assign(acc, flatten(val, fullKey));
+      } else if (Array.isArray(val)) {
+        val.forEach((item, i) => {
+          if (typeof item === 'object' && item !== null) {
+            Object.assign(acc, flatten(item, `${fullKey}.${i}`));
+          } else {
+            acc[`${fullKey}.${i}`] = item;
+          }
+        });
+      } else {
+        acc[fullKey] = val;
+      }
+      return acc;
+    }, {});
+  }
+
+  const translations = {
+    fr: flatten(fr),
+    en: flatten(en),
+  };
+
+  let currentLang = localStorage.getItem('lang') || 'fr';
+
+  function applyLang(lang) {
+    const t = translations[lang];
+    // Update all elements with data-i18n attribute
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (t[key] !== undefined) {
+        el.textContent = t[key];
+      }
+    });
+
+    // Update lang toggles
+    ['lang-current', 'lang-current-mobile'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = lang.toUpperCase();
+    });
+    ['lang-other', 'lang-other-mobile'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = lang === 'fr' ? 'EN' : 'FR';
+    });
+
+    // Update html lang attribute
+    document.documentElement.lang = lang;
+
+    // Store preference
+    localStorage.setItem('lang', lang);
+    currentLang = lang;
+
+    // Notify other components (e.g. Contact form fields)
+    window.dispatchEvent(new CustomEvent('langChange', { detail: lang }));
+  }
+
+  function toggleLang() {
+    applyLang(currentLang === 'fr' ? 'en' : 'fr');
+  }
+
+  // Wire up both toggle buttons (desktop + mobile)
+  document.getElementById('lang-toggle')?.addEventListener('click', toggleLang);
+  document.getElementById('lang-toggle-mobile')?.addEventListener('click', toggleLang);
+
+  // Apply saved/default language on load
+  applyLang(currentLang);
+})();
+</script>

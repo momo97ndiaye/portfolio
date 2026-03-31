@@ -1,0 +1,124 @@
+---
+// Projects — 3 cards, 1 col mobile / 3 col desktop
+---
+
+<section id="projects" class="py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="mb-16" data-aos="fade-up">
+      <h2 class="section-title text-3xl sm:text-4xl text-[#F1F5F9]" data-i18n="projects.title">
+        Projets réalisés
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+      <!-- QuikStock -->
+      <div class="glass glass-hover rounded-2xl p-6 flex flex-col gap-4 group"
+           data-aos="fade-up" data-aos-delay="100">
+        <div class="flex items-start justify-between gap-3">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium"
+                style="background:rgba(56,189,248,0.1); border:1px solid rgba(56,189,248,0.25); color:#38BDF8;">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#38BDF8] animate-pulse"></span>
+            <span data-i18n="projects.items.0.badge">SaaS · En cours</span>
+          </span>
+        </div>
+        <h3 class="text-xl font-bold text-[#F1F5F9]" style="font-family:'Bricolage Grotesque',sans-serif;">QuikStock</h3>
+        <p class="text-sm text-[#64748B] leading-relaxed flex-1" data-i18n="projects.items.0.description">
+          Application mobile-first de gestion de stock et facturation pour les petits commerçants en Afrique de l'Ouest. Offline-first, intégration Mobile Money, support FCFA.
+        </p>
+        <div class="flex flex-wrap gap-1.5 pt-3 border-t border-[rgba(255,255,255,0.05)]">
+          <span class="tech-badge">Java 21</span>
+          <span class="tech-badge">Spring Boot 3.3</span>
+          <span class="tech-badge">Vue 3</span>
+          <span class="tech-badge">Quasar</span>
+          <span class="tech-badge">PWA</span>
+          <span class="tech-badge">Pinia</span>
+          <span class="tech-badge">PostgreSQL 16</span>
+          <span class="tech-badge">JWT</span>
+          <span class="tech-badge">Flyway</span>
+          <span class="tech-badge">Docker</span>
+          <span class="tech-badge">GitHub Actions</span>
+          <span class="tech-badge">Cloudflare R2</span>
+        </div>
+        <a href="https://github.com/momo97ndiaye" target="_blank" rel="noopener noreferrer"
+           class="flex items-center gap-2 text-sm text-[#38BDF8] hover:text-[#7DD3FC] transition-colors mt-1">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+          </svg>
+          <span data-i18n="projects.items.0.link_label">GitHub</span>
+        </a>
+      </div>
+
+      <!-- MeetReport -->
+      <div class="glass glass-hover rounded-2xl p-6 flex flex-col gap-4 group"
+           data-aos="fade-up" data-aos-delay="200">
+        <div class="flex items-start justify-between gap-3">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium"
+                style="background:rgba(99,102,241,0.1); border:1px solid rgba(99,102,241,0.25); color:#818CF8;">
+            <span data-i18n="projects.items.1.badge">SaaS B2B</span>
+          </span>
+        </div>
+        <h3 class="text-xl font-bold text-[#F1F5F9]" style="font-family:'Bricolage Grotesque',sans-serif;">MeetReport</h3>
+        <p class="text-sm text-[#64748B] leading-relaxed flex-1" data-i18n="projects.items.1.description">
+          Génération automatique de comptes-rendus de réunions depuis Teams et Google Meet. Système multi-tenant, 4 niveaux tarifaires.
+        </p>
+        <div class="flex flex-wrap gap-1.5 pt-3 border-t border-[rgba(255,255,255,0.05)]">
+          <span class="tech-badge">Java 17</span>
+          <span class="tech-badge">Spring Boot</span>
+          <span class="tech-badge">Angular 18</span>
+          <span class="tech-badge">TypeScript</span>
+          <span class="tech-badge">Angular Material</span>
+          <span class="tech-badge">PostgreSQL 16</span>
+          <span class="tech-badge">JWT</span>
+          <span class="tech-badge">OAuth2</span>
+          <span class="tech-badge">Claude AI</span>
+          <span class="tech-badge">Whisper</span>
+          <span class="tech-badge">Stripe</span>
+          <span class="tech-badge">SendGrid</span>
+        </div>
+        <a href="https://github.com/momo97ndiaye" target="_blank" rel="noopener noreferrer"
+           class="flex items-center gap-2 text-sm text-[#38BDF8] hover:text-[#7DD3FC] transition-colors mt-1">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+          </svg>
+          <span data-i18n="projects.items.1.link_label">GitHub</span>
+        </a>
+      </div>
+
+      <!-- Client Projects — Confidential -->
+      <div class="glass glass-hover rounded-2xl p-6 flex flex-col gap-4"
+           data-aos="fade-up" data-aos-delay="300">
+        <div class="flex items-start justify-between gap-3">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium"
+                style="background:rgba(148,163,184,0.1); border:1px solid rgba(148,163,184,0.2); color:#94A3B8;">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" class="shrink-0">
+              <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+            </svg>
+            <span data-i18n="projects.items.2.badge">Confidentiel</span>
+          </span>
+        </div>
+        <h3 class="text-xl font-bold text-[#F1F5F9]" style="font-family:'Bricolage Grotesque',sans-serif;" data-i18n="projects.items.2.name">
+          Projets Clients
+        </h3>
+        <p class="text-sm text-[#64748B] leading-relaxed flex-1" data-i18n="projects.items.2.description">
+          Développement de plateformes institutionnelles et fintech pour des clients en Afrique de l'Ouest. Architectures microservices, intégrations bancaires, haute disponibilité.
+        </p>
+        <div class="flex flex-wrap gap-1.5 pt-3 border-t border-[rgba(255,255,255,0.05)]">
+          <span class="tech-badge">Spring Boot</span>
+          <span class="tech-badge">Angular</span>
+          <span class="tech-badge">Keycloak</span>
+          <span class="tech-badge">Docker</span>
+          <span class="tech-badge">Kafka</span>
+        </div>
+        <div class="flex items-center gap-2 text-sm text-[#475569] mt-1 font-mono">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+          </svg>
+          <span>NDA</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

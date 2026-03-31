@@ -1,0 +1,117 @@
+---
+// Navbar — fixed, blur on scroll, hamburger on mobile, FR/EN toggle
+---
+
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" aria-label="Navigation principale">
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+
+    <!-- Logo -->
+    <a href="#hero" class="text-xl font-bold tracking-tight" style="font-family:'Bricolage Grotesque',sans-serif;">
+      <span style="color:#38BDF8;">M</span><span style="color:#6366F1;">N</span>
+    </a>
+
+    <!-- Desktop links -->
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#services"     class="nav-link" data-section="services"     data-i18n="nav.services">Services</a>
+      <a href="#stack"        class="nav-link" data-section="stack"        data-i18n="nav.stack">Stack</a>
+      <a href="#projects"     class="nav-link" data-section="projects"     data-i18n="nav.projects">Projets</a>
+      <a href="#process"      class="nav-link" data-section="process"      data-i18n="nav.process">Processus</a>
+      <a href="#contact"      class="nav-link" data-section="contact"      data-i18n="nav.contact">Contact</a>
+    </div>
+
+    <!-- Right side: lang toggle + CTA -->
+    <div class="hidden md:flex items-center gap-4">
+      <!-- Language toggle -->
+      <button id="lang-toggle" class="flex items-center gap-1.5 text-xs font-mono text-[#94A3B8] hover:text-[#38BDF8] transition-colors border border-[rgba(255,255,255,0.1)] rounded-md px-3 py-1.5" aria-label="Toggle language">
+        <span id="lang-current" class="font-semibold text-[#38BDF8]">FR</span>
+        <span class="opacity-40">/</span>
+        <span id="lang-other" class="opacity-60">EN</span>
+      </button>
+
+      <!-- CTA button -->
+      <a href="#contact" class="btn-indigo text-sm py-2 px-4" data-i18n="nav.cta">Me contacter</a>
+    </div>
+
+    <!-- Mobile: lang + hamburger -->
+    <div class="flex md:hidden items-center gap-3">
+      <button id="lang-toggle-mobile" class="flex items-center gap-1 text-xs font-mono text-[#94A3B8] border border-[rgba(255,255,255,0.1)] rounded px-2 py-1" aria-label="Toggle language">
+        <span id="lang-current-mobile" class="text-[#38BDF8] font-semibold">FR</span>
+        <span class="opacity-40">/</span>
+        <span id="lang-other-mobile" class="opacity-60">EN</span>
+      </button>
+      <button id="hamburger" class="p-2 text-[#94A3B8] hover:text-[#F1F5F9]" aria-label="Menu" aria-expanded="false">
+        <svg id="icon-menu" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+        <svg id="icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hidden">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden" style="background:rgba(2,6,23,0.97);border-top:1px solid rgba(255,255,255,0.06);">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-4">
+      <a href="#services" class="mobile-nav-link text-[#94A3B8] hover:text-[#F1F5F9] text-sm font-medium transition-colors" data-i18n="nav.services">Services</a>
+      <a href="#stack"    class="mobile-nav-link text-[#94A3B8] hover:text-[#F1F5F9] text-sm font-medium transition-colors" data-i18n="nav.stack">Stack</a>
+      <a href="#projects" class="mobile-nav-link text-[#94A3B8] hover:text-[#F1F5F9] text-sm font-medium transition-colors" data-i18n="nav.projects">Projets</a>
+      <a href="#process"       class="mobile-nav-link text-[#94A3B8] hover:text-[#F1F5F9] text-sm font-medium transition-colors" data-i18n="nav.process">Processus</a>
+      <a href="#contact"      class="mobile-nav-link text-[#94A3B8] hover:text-[#F1F5F9] text-sm font-medium transition-colors" data-i18n="nav.contact">Contact</a>
+      <a href="#contact" class="btn-indigo text-sm text-center mt-2" data-i18n="nav.cta">Me contacter</a>
+    </div>
+  </div>
+</nav>
+
+<script is:inline>
+  // ── Scroll blur effect ──
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('nav-scrolled', window.scrollY > 20);
+  }, { passive: true });
+
+  // ── Active section highlight (Intersection Observer) ──
+  const sections = ['services','stack','projects','process','contact'];
+  const navLinks = document.querySelectorAll('.nav-link[data-section]');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinks.forEach(link => {
+          const active = link.dataset.section === id;
+          link.classList.toggle('nav-link--active', active);
+          link.setAttribute('aria-current', active ? 'true' : 'false');
+        });
+      }
+    });
+  // rootMargin: top -20% so section activates early enough; bottom -40% leaves room for short sections like Contact
+  }, { rootMargin: '-20% 0px -40% 0px', threshold: 0 });
+
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) observer.observe(el);
+  });
+
+  // ── Mobile hamburger ──
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const iconMenu = document.getElementById('icon-menu');
+  const iconClose = document.getElementById('icon-close');
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+    iconMenu.classList.toggle('hidden', isOpen);
+    iconClose.classList.toggle('hidden', !isOpen);
+  });
+
+  // Close on mobile link click
+  document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      iconMenu.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+    });
+  });
+</script>
