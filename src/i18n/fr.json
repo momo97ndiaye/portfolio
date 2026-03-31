@@ -17,8 +17,8 @@
   },
   "about": {
     "title": "À propos",
-    "bio": "Développeur FullStack avec 4 ans d'expérience, je conçois des applications qui fonctionnent vraiment sur le terrain — offline-first, intégration Mobile Money, contraintes de connectivité africaines. J'ai travaillé avec des startups et entreprises au Sénégal et au Bénin, et je collabore à distance avec des clients européens exigeants.",
-    "bio2": "Ma double culture — maîtrise des réalités locales africaines et standards techniques internationaux — me permet de livrer des produits qui marchent là où ils sont déployés.",
+    "bio": "Développeur FullStack Java & Angular avec 4 ans d'expérience sur des projets à fort impact institutionnel — ministères, collectivités et PME au Sénégal et au Bénin. J'ai également collaboré à distance avec des clients européens exigeants.",
+    "bio2": "Forte sensibilité UI/UX, exécution rapide, et utilisation quotidienne de l'IA pour livrer plus vite sans sacrifier la qualité. Je construis des produits qui fonctionnent vraiment là où ils sont déployés.",
     "languages_label": "Langues",
     "lang_fr": "Français",
     "lang_en": "Anglais",
@@ -39,8 +39,8 @@
   "hero": {
     "badge": "Disponible pour nouveaux projets ✦",
     "title": "Mamadou NDIAYE",
-    "subtitle": "FullStack Engineer & SaaS Builder",
-    "description": "Je conçois et développe des applications web robustes et des SaaS de A à Z. Basé à Dakar, je travaille avec des startups et entreprises en local et à distance.",
+    "subtitle": "Développeur FullStack Java & Angular",
+    "description": "4 ans d'expérience sur des projets à fort impact institutionnel — ministères, collectivités, PME. Forte sensibilité UI/UX, exécution rapide, et utilisation quotidienne de l'IA pour livrer plus vite sans sacrifier la qualité.",
     "cta_primary": "Voir mes services",
     "cta_secondary": "Discutons de votre projet",
     "location": "Dakar, Sénégal · Remote"
@@ -181,7 +181,7 @@
     }
   },
   "footer": {
-    "name": "Mamadou NDIAYE · FullStack Engineer & SaaS Builder",
-    "copy": "© 2025 · Dakar, Sénégal"
+    "name": "Mamadou NDIAYE · Développeur FullStack Java & Angular",
+    "copy": "© 2026 · Dakar, Sénégal"
   }
 }

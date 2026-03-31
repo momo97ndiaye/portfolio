@@ -17,8 +17,8 @@
   },
   "about": {
     "title": "About",
-    "bio": "FullStack developer with 4 years of experience, I build applications that actually work in the field — offline-first, Mobile Money integration, African connectivity constraints. I have worked with startups and companies in Senegal and Benin, and collaborate remotely with demanding European clients.",
-    "bio2": "My dual expertise — deep knowledge of African local realities combined with international technical standards — lets me deliver products that work where they are deployed.",
+    "bio": "FullStack Java & Angular developer with 4 years of experience on high-impact institutional projects — government agencies, local authorities, and SMEs in Senegal and Benin. I also collaborate remotely with demanding European clients.",
+    "bio2": "Strong UI/UX sensibility, fast execution, and daily use of AI to deliver faster without compromising quality. I build products that truly work where they are deployed.",
     "languages_label": "Languages",
     "lang_fr": "French",
     "lang_en": "English",
@@ -39,8 +39,8 @@
   "hero": {
     "badge": "Available for new projects ✦",
     "title": "Mamadou NDIAYE",
-    "subtitle": "FullStack Engineer & SaaS Builder",
-    "description": "I design and develop robust web applications and SaaS products end-to-end. Based in Dakar, I work with startups and companies locally and remotely.",
+    "subtitle": "FullStack Java & Angular Developer",
+    "description": "4 years of experience on high-impact institutional projects — government agencies, local authorities, SMEs. Strong UI/UX sensibility, fast execution, and daily use of AI to deliver faster without compromising quality.",
     "cta_primary": "View my services",
     "cta_secondary": "Let's discuss your project",
     "location": "Dakar, Senegal · Remote"
@@ -181,7 +181,7 @@
     }
   },
   "footer": {
-    "name": "Mamadou NDIAYE · FullStack Engineer & SaaS Builder",
-    "copy": "© 2025 · Dakar, Senegal"
+    "name": "Mamadou NDIAYE · FullStack Java & Angular Developer",
+    "copy": "© 2026 · Dakar, Senegal"
   }
 }
