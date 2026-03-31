@@ -39,7 +39,7 @@
   "hero": {
     "badge": "Disponible pour nouveaux projets ✦",
     "title": "Mamadou NDIAYE",
-    "subtitle": "Développeur FullStack Java & Angular",
+    "subtitle": "FullStack Engineer & SaaS Builder",
     "description": "4 ans d'expérience sur des projets à fort impact institutionnel — ministères, collectivités, PME. Forte sensibilité UI/UX, exécution rapide, et utilisation quotidienne de l'IA pour livrer plus vite sans sacrifier la qualité.",
     "cta_primary": "Voir mes services",
     "cta_secondary": "Discutons de votre projet",
@@ -181,7 +181,7 @@
     }
   },
   "footer": {
-    "name": "Mamadou NDIAYE · Développeur FullStack Java & Angular",
+    "name": "Mamadou NDIAYE · FullStack Engineer & SaaS Builder",
     "copy": "© 2026 · Dakar, Sénégal"
   }
 }
