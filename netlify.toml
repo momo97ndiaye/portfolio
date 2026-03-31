@@ -29,8 +29,3 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# 404 fallback
-[[redirects]]
-  from   = "/*"
-  to     = "/404"
-  status = 404

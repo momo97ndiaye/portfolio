@@ -46,6 +46,7 @@
           id="contact-form"
           name="contact"
           method="POST"
+          action="/#contact"
           data-netlify="true"
           netlify-honeypot="bot-field"
           class="glass rounded-2xl p-8 flex flex-col gap-6"
@@ -226,9 +227,12 @@
   });
 
   // ── Netlify Forms — async submit, no page redirect ──
+  document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('contact-form');
   const successBox = document.getElementById('form-success');
   const submitBtn = document.getElementById('submit-btn');
+
+  if (!form || !successBox || !submitBtn) return;
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -257,4 +261,5 @@
       alert('Une erreur est survenue. Réessayez ou contactez-moi directement par email.');
     }
   });
+  }); // end DOMContentLoaded
 </script>
