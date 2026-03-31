@@ -3,10 +3,38 @@
     "services": "Services",
     "stack": "Stack",
     "projects": "Projets",
+    "about": "À propos",
     "process": "Processus",
     "testimonials": "Avis",
     "contact": "Contact",
     "cta": "Me contacter"
+  },
+  "stats": {
+    "experience": "d'expérience",
+    "projects": "projets livrés",
+    "countries": "pays",
+    "languages": "langues"
+  },
+  "about": {
+    "title": "À propos",
+    "bio": "Développeur FullStack avec 4 ans d'expérience, je conçois des applications qui fonctionnent vraiment sur le terrain — offline-first, intégration Mobile Money, contraintes de connectivité africaines. J'ai travaillé avec des startups et entreprises au Sénégal et au Bénin, et je collabore à distance avec des clients européens exigeants.",
+    "bio2": "Ma double culture — maîtrise des réalités locales africaines et standards techniques internationaux — me permet de livrer des produits qui marchent là où ils sont déployés.",
+    "languages_label": "Langues",
+    "lang_fr": "Français",
+    "lang_en": "Anglais",
+    "lang_wo": "Wolof",
+    "collab_label": "Collaboration",
+    "tjm_label": "TJM",
+    "tjm_value": "20 000 – 50 000 FCFA / jour",
+    "mission_label": "Types de mission",
+    "mission_value": "Forfait · Régie · Part-time",
+    "location_label": "Localisation",
+    "timezone_label": "Fuseau horaire"
+  },
+  "projectscta": {
+    "title": "Votre prochain projet mérite le même niveau de qualité",
+    "subtitle": "Discutons de vos besoins — devis gratuit et réponse sous 24h.",
+    "cta": "Démarrer un projet →"
   },
   "hero": {
     "badge": "Disponible pour nouveaux projets ✦",

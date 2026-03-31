@@ -1,0 +1,133 @@
+---
+// About — bio, photo, langues, TJM, modes de mission
+---
+
+<section id="about" class="py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Photo -->
+      <div class="flex justify-center lg:justify-start" data-aos="fade-right">
+        <div class="relative">
+          <!-- Glow derrière la photo -->
+          <div class="absolute inset-0 rounded-2xl opacity-20 blur-2xl"
+               style="background:linear-gradient(135deg,#38BDF8,#6366F1); transform:scale(0.85) translateY(8px);"></div>
+          <img
+            src="/mamadou-ndiaye.jpg"
+            alt="Mamadou NDIAYE — FullStack Engineer"
+            loading="lazy"
+            width="360"
+            height="360"
+            class="relative rounded-2xl object-cover object-top w-72 h-72 sm:w-80 sm:h-80"
+            style="border:1px solid rgba(56,189,248,0.2);"
+          />
+          <!-- Badge disponible -->
+          <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 px-4 py-2 rounded-full glass whitespace-nowrap"
+               style="border:1px solid rgba(56,189,248,0.3);">
+            <span class="w-2 h-2 rounded-full bg-[#38BDF8] animate-pulse"></span>
+            <span class="text-[#38BDF8] text-xs font-medium" data-i18n="hero.badge">Disponible pour nouveaux projets</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contenu -->
+      <div class="flex flex-col gap-7" data-aos="fade-left" data-aos-delay="100">
+
+        <!-- Titre section -->
+        <div>
+          <h2 class="section-title text-3xl sm:text-4xl text-[#F1F5F9]" data-i18n="about.title">
+            À propos
+          </h2>
+        </div>
+
+        <!-- Bio -->
+        <p class="text-[#94A3B8] leading-relaxed" data-i18n="about.bio">
+          Développeur FullStack avec 4 ans d'expérience, je conçois des applications qui fonctionnent vraiment sur le terrain — offline-first, intégration Mobile Money, contraintes de connectivité africaines. J'ai travaillé avec des startups et entreprises au Sénégal et au Bénin, et je collabore à distance avec des clients européens exigeants.
+        </p>
+        <p class="text-[#64748B] leading-relaxed text-sm" data-i18n="about.bio2">
+          Ma double culture — maîtrise des réalités locales africaines et standards techniques internationaux — me permet de livrer des produits qui marchent là où ils sont déployés.
+        </p>
+
+        <!-- Langues -->
+        <div class="flex flex-col gap-2">
+          <span class="text-xs font-semibold text-[#475569] uppercase tracking-widest" data-i18n="about.languages_label">Langues</span>
+          <div class="flex flex-wrap gap-2">
+            <span class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-[#F1F5F9]"
+                  style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);">
+              🇫🇷 <span data-i18n="about.lang_fr">Français</span>
+            </span>
+            <span class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-[#F1F5F9]"
+                  style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);">
+              🇬🇧 <span data-i18n="about.lang_en">Anglais</span>
+            </span>
+            <span class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-[#F1F5F9]"
+                  style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);">
+              🇸🇳 <span data-i18n="about.lang_wo">Wolof</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Modes de collaboration -->
+        <div class="glass rounded-2xl p-5 flex flex-col gap-4">
+          <span class="text-xs font-semibold text-[#475569] uppercase tracking-widest" data-i18n="about.collab_label">Collaboration</span>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <!-- TJM -->
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5"
+                   style="background:rgba(56,189,248,0.08);border:1px solid rgba(56,189,248,0.15);">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#38BDF8" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm font-medium text-[#F1F5F9]" data-i18n="about.tjm_label">TJM</p>
+                <p class="text-xs text-[#64748B]" data-i18n="about.tjm_value">20 000 – 50 000 FCFA / jour</p>
+              </div>
+            </div>
+            <!-- Types de mission -->
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5"
+                   style="background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.15);">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#818CF8" stroke-width="2">
+                  <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm font-medium text-[#F1F5F9]" data-i18n="about.mission_label">Types de mission</p>
+                <p class="text-xs text-[#64748B]" data-i18n="about.mission_value">Forfait · Régie · Part-time</p>
+              </div>
+            </div>
+            <!-- Disponibilité -->
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5"
+                   style="background:rgba(56,189,248,0.08);border:1px solid rgba(56,189,248,0.15);">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#38BDF8" stroke-width="2">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm font-medium text-[#F1F5F9]" data-i18n="about.location_label">Localisation</p>
+                <p class="text-xs text-[#64748B]">Dakar, Sénégal · Remote</p>
+              </div>
+            </div>
+            <!-- Fuseau horaire -->
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5"
+                   style="background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.15);">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#818CF8" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm font-medium text-[#F1F5F9]" data-i18n="about.timezone_label">Fuseau horaire</p>
+                <p class="text-xs text-[#64748B]">GMT+0 · Compatible EU & US</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

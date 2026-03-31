@@ -3,10 +3,38 @@
     "services": "Services",
     "stack": "Stack",
     "projects": "Projects",
+    "about": "About",
     "process": "Process",
     "testimonials": "Reviews",
     "contact": "Contact",
     "cta": "Contact me"
+  },
+  "stats": {
+    "experience": "years of experience",
+    "projects": "projects delivered",
+    "countries": "countries",
+    "languages": "languages"
+  },
+  "about": {
+    "title": "About",
+    "bio": "FullStack developer with 4 years of experience, I build applications that actually work in the field — offline-first, Mobile Money integration, African connectivity constraints. I have worked with startups and companies in Senegal and Benin, and collaborate remotely with demanding European clients.",
+    "bio2": "My dual expertise — deep knowledge of African local realities combined with international technical standards — lets me deliver products that work where they are deployed.",
+    "languages_label": "Languages",
+    "lang_fr": "French",
+    "lang_en": "English",
+    "lang_wo": "Wolof",
+    "collab_label": "Collaboration",
+    "tjm_label": "Daily rate",
+    "tjm_value": "20,000 – 50,000 FCFA / day (~€30–€75)",
+    "mission_label": "Mission types",
+    "mission_value": "Fixed-price · T&M · Part-time",
+    "location_label": "Location",
+    "timezone_label": "Timezone"
+  },
+  "projectscta": {
+    "title": "Your next project deserves the same level of quality",
+    "subtitle": "Let's talk about your needs — free quote, response within 24h.",
+    "cta": "Start a project →"
   },
   "hero": {
     "badge": "Available for new projects ✦",

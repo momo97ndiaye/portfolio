@@ -15,6 +15,7 @@
       <a href="#services"     class="nav-link" data-section="services"     data-i18n="nav.services">Services</a>
       <a href="#stack"        class="nav-link" data-section="stack"        data-i18n="nav.stack">Stack</a>
       <a href="#projects"     class="nav-link" data-section="projects"     data-i18n="nav.projects">Projets</a>
+      <a href="#about"        class="nav-link" data-section="about"        data-i18n="nav.about">À propos</a>
       <a href="#process"      class="nav-link" data-section="process"      data-i18n="nav.process">Processus</a>
       <a href="#contact"      class="nav-link" data-section="contact"      data-i18n="nav.contact">Contact</a>
     </div>
@@ -55,8 +56,9 @@
     <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-4">
       <a href="#services" class="mobile-nav-link text-[#94A3B8] hover:text-[#F1F5F9] text-sm font-medium transition-colors" data-i18n="nav.services">Services</a>
       <a href="#stack"    class="mobile-nav-link text-[#94A3B8] hover:text-[#F1F5F9] text-sm font-medium transition-colors" data-i18n="nav.stack">Stack</a>
-      <a href="#projects" class="mobile-nav-link text-[#94A3B8] hover:text-[#F1F5F9] text-sm font-medium transition-colors" data-i18n="nav.projects">Projets</a>
-      <a href="#process"       class="mobile-nav-link text-[#94A3B8] hover:text-[#F1F5F9] text-sm font-medium transition-colors" data-i18n="nav.process">Processus</a>
+      <a href="#projects"     class="mobile-nav-link text-[#94A3B8] hover:text-[#F1F5F9] text-sm font-medium transition-colors" data-i18n="nav.projects">Projets</a>
+      <a href="#about"        class="mobile-nav-link text-[#94A3B8] hover:text-[#F1F5F9] text-sm font-medium transition-colors" data-i18n="nav.about">À propos</a>
+      <a href="#process"      class="mobile-nav-link text-[#94A3B8] hover:text-[#F1F5F9] text-sm font-medium transition-colors" data-i18n="nav.process">Processus</a>
       <a href="#contact"      class="mobile-nav-link text-[#94A3B8] hover:text-[#F1F5F9] text-sm font-medium transition-colors" data-i18n="nav.contact">Contact</a>
       <a href="#contact" class="btn-indigo text-sm text-center mt-2" data-i18n="nav.cta">Me contacter</a>
     </div>
@@ -71,7 +73,7 @@
   }, { passive: true });
 
   // ── Active section highlight (Intersection Observer) ──
-  const sections = ['services','stack','projects','process','contact'];
+  const sections = ['services','stack','projects','about','process','contact'];
   const navLinks = document.querySelectorAll('.nav-link[data-section]');
 
   const observer = new IntersectionObserver((entries) => {
